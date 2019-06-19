@@ -1,0 +1,18 @@
+version: "3"
+services:
+ frontend:
+    image: nginx
+    ports:
+      - 5010:80
+    # links:
+    #   - backend
+    volumes:
+       - ../frontend:/usr/share/nginx/html
+ backend:
+    container_name: backend
+    image: php:7-apache
+    volumes:
+      - ../api:/var/www/html
+    ports:
+      - 5002:80
+    
