@@ -1,12 +1,12 @@
 function shake() {
 
-    fetch("http://127.0.0.1:5002/api.php", {
+    fetch("http://localhost:5020/api.php", {
             method: "GET",
-            // mode: "cors",
-            // cache: "no-cache",
-            // credentials: "same-origin"
-            //   headers: {"Content-Type": "text/plain; charset=utf-8"},
-            //body: JSON.stringify({command: "get_token"}),
+            mode: "cors",
+            cache: "no-cache",
+            origin: "http://localhost:5010",
+            credentials: "same-origin",
+            headers: { "Content-Type": "text/plain; charset=utf-8" }
         })
         .then((res) => res.text())
         .then((body) => {
